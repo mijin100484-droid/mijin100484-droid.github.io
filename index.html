@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>책과 길, 그리고 AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#home" class="logo">📚✈️🤖</a>
+    <button class="menu-btn" aria-label="메뉴 열기">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#reading">독서</a></li>
+        <li><a href="#travel">여행</a></li>
+        <li><a href="#ai">AI 자동화</a></li>
+        <li><a href="#contact">연락</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" aria-label="테마 전환">🌙</button>
+  </header>
+
+  <main>
+    <!-- 히어로 -->
+    <section id="home" class="hero">
+      <p class="hero-sub">안녕하세요 👋</p>
+      <h1>책을 읽고, 길을 떠나고,<br><span class="typing"></span><span class="cursor">|</span></h1>
+      <p class="hero-desc">독서와 여행을 사랑하며, AI 자동화로 더 똑똑하게 일하는 법을 배우고 있습니다.</p>
+      <a href="#about" class="btn">더 알아보기</a>
+    </section>
+
+    <!-- 소개 -->
+    <section id="about" class="section reveal">
+      <h2>About Me</h2>
+      <div class="cards three">
+        <div class="card">
+          <div class="icon">📖</div>
+          <h3>독서</h3>
+          <p>한 권의 책은 하나의 세계. 책 속에서 생각을 넓히고 새로운 관점을 얻습니다.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🌏</div>
+          <h3>여행</h3>
+          <p>낯선 곳의 공기와 사람들. 직접 걸으며 보고 느끼는 경험을 소중히 여깁니다.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>AI 자동화</h3>
+          <p>반복되는 일은 AI에게, 생각하는 일은 나에게. 자동화를 공부하고 실습 중입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 독서 -->
+    <section id="reading" class="section reveal">
+      <h2>나의 독서 기록</h2>
+      <div class="filter">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="done">완독</button>
+        <button class="filter-btn" data-filter="reading">읽는 중</button>
+        <button class="filter-btn" data-filter="wish">읽고 싶은 책</button>
+      </div>
+      <ul class="book-list" id="bookList"></ul>
+
+      <form class="book-form" id="bookForm">
+        <input type="text" id="bookTitle" placeholder="책 제목" required>
+        <input type="text" id="bookAuthor" placeholder="저자">
+        <select id="bookStatus">
+          <option value="reading">읽는 중</option>
+          <option value="done">완독</option>
+          <option value="wish">읽고 싶은 책</option>
+        </select>
+        <button type="submit" class="btn small">추가</button>
+      </form>
+    </section>
+
+    <!-- 여행 -->
+    <section id="travel" class="section reveal">
+      <h2>여행 이야기</h2>
+      <div class="cards travel-cards">
+        <article class="travel-card" style="--c1:#ff9a8b;--c2:#ff6a88">
+          <span class="flag">🇯🇵</span>
+          <h3>교토, 일본</h3>
+          <p>고즈넉한 골목과 사찰, 그리고 작은 서점에서 보낸 오후.</p>
+        </article>
+        <article class="travel-card" style="--c1:#89f7fe;--c2:#66a6ff">
+          <span class="flag">🇰🇷</span>
+          <h3>제주도</h3>
+          <p>올레길을 걸으며 바다 바람과 함께 읽은 한 권의 책.</p>
+        </article>
+        <article class="travel-card" style="--c1:#a8e063;--c2:#56ab2f">
+          <span class="flag">🇨🇭</span>
+          <h3>스위스</h3>
+          <p>언젠가 꼭 가보고 싶은 알프스. 버킷리스트 1순위!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- AI 자동화 -->
+    <section id="ai" class="section reveal">
+      <h2>AI 자동화 학습 로드맵</h2>
+      <div class="progress-list">
+        <div class="progress-item">
+          <div class="progress-label"><span>프롬프트 엔지니어링</span><span>80%</span></div>
+          <div class="bar"><div class="fill" data-value="80"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>업무 자동화 도구 (Zapier, Make 등)</span><span>60%</span></div>
+          <div class="bar"><div class="fill" data-value="60"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>HTML · CSS · JavaScript</span><span>50%</span></div>
+          <div class="bar"><div class="fill" data-value="50"></div></div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label"><span>AI 에이전트 활용</span><span>40%</span></div>
+          <div class="bar"><div class="fill" data-value="40"></div></div>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        <p id="quote"></p>
+        <button class="btn small" id="quoteBtn">오늘의 문장 💬</button>
+      </div>
+    </section>
+
+    <!-- 연락 -->
+    <section id="contact" class="section reveal">
+      <h2>Contact</h2>
+      <p class="center">책 추천, 여행 이야기, AI 자동화 정보 공유 모두 환영합니다!</p>
+      <div class="contact-links">
+        <a href="https://github.com/mijim100484-droid" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> 책과 길, 그리고 AI</p>
+  </footer>
+
+  <button class="top-btn" aria-label="맨 위로">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
